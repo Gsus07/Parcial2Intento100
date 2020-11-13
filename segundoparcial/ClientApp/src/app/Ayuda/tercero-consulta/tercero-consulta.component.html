@@ -1,0 +1,50 @@
+<div class="row">
+      
+  <div class="col-6">
+          <input
+      [(ngModel)]="searchText"
+      type="text"
+      class="form-control"
+      placeholder="Type to filter"
+    />
+        
+  </div>
+    
+</div>
+  
+<hr />
+<button type="submit" class="btn btn-blue btn-lg btn-block" (click)="get()">Consultar</button>
+<table class="table table-striped" *ngIf="terceros && terceros.length">
+      
+  <thead>
+          
+    <tr>
+      <th scope="col">Num</th>
+      <th scope="col">Identificación</th>
+      <th scope="col">Nombre </th>
+      <th scope="col">TipoIdentificacion</th>
+      <th scope="col">Pais</th>
+      <th scope="col">Departamento </th>
+      <th scope="col">Ciudad </th>
+                     
+    </tr>
+        
+  </thead>
+      
+  <tbody>
+          
+    <tr *ngFor="let tercero of tercero; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ tercero.identificacion }} </td>
+      <td>{{ tercero.nombre }}</td>
+      <td>{{ tercero.tipoIdentificacion }}</td>
+      <td>{{ tercero.pais }}</td>
+      <td>{{ tercero.departamento }}</td>
+      <td>{{ tercero.ciudad }}</td>
+
+    </tr>
+        
+  </tbody>
+    
+</table>
+

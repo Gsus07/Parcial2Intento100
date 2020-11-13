@@ -1,0 +1,68 @@
+<div class="container">
+        <div class="row">
+                <div class="col-md-6 offset-md-3">
+                        <h2>Registro de Pagos</h2>
+            <form [formGroup]="formGroup">
+                <div class="form-group">
+                    <label>CodPersona</label>
+                    <input type="text"  name="codPersona" formControlName="codPersona" class="form-control" />
+                </div>              
+                <div class="form-group">
+                    <label>Tipo de pago</label>
+                    <select name="tipoPago" class="form-control" formControlName="tipoPago" [ngClass]="{ 'is-invalid': control.tipoPago.touched && control.tipoPago.errors}">
+                        <option value="Administrativos">Administrativos</option>
+                        <option value="Financieros">Financieros</option>
+                        <option value="Legales">Legales</option>
+                        <option value="ViajesYTransportes">Viajes y transportes</option>
+                        <option value="Honorarios">Honorarios</option>
+                        <option value="Arrendamiento">Arrendamiento</option>
+                        <option value="Impuestos">Impuestos</option>
+                        <option value="Retenciones">Retenciones</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Fecha de pago:</label>
+                    <input type="date"
+                    name="fechaPago"
+                    formControlName="fechaPago"
+                    class="form-control"
+                    [ngClass]="{
+                      'is-invalid':
+                        control.fechaPago.touched && control.fechaPago.errors
+                    }">
+                            Este campo es obligatorio.
+                    
+                </div>
+                <div class="form-group">
+                    <label>Valor de pago</label>
+                    <input type="number"
+                    name="valorPago"
+                    formControlName="valorPago"
+                    class="form-control"
+                    [ngClass]="{
+                      'is-invalid':
+                        control.valorPago.touched && control.valorPago.errors
+                    }">
+                            Este campo es obligatorio.
+                </div>
+                <div class="form-group">
+                    <label>Valor del Iva del pago</label>
+                    <input type="number"
+                    name="valorIvaPago"
+                    formControlName="valorIvaPago"
+                    class="form-control"
+                    [ngClass]="{
+                      'is-invalid':
+                        control.valorIvaPago.touched && control.valorIvaPago.errors
+                    }">
+                            Este campo es obligatorio.
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary mr-1"(click)="onSubmit()"[disabled]="formGroup.invalid">Registrar</button>
+                    <button class="btn btn-secondary" type="reset">Cancelar</button>
+                </div>
+                            
+            </form>  
+        </div>
+    </div>
+</div>
